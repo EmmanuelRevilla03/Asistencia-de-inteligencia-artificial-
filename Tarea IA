@@ -1,0 +1,29 @@
+class Estudiante:
+  def __init__(self, nombre, calificaciones, asistencia):
+    self.nombre = nombre
+    self.calificaciones = calificaciones
+    self.asistencia = asistencia
+
+  def evaluar(self):
+    media = sum(self.calificaciones) / len(self.calificaciones)
+    if media >= 3 and self.asistencia >= 80:
+      resultado = "aprobado"
+    else:
+      resultado = "desaprobado"
+    return f"{self.nombre} tiene una nota media de {media:.2f} y ha {resultado}."
+
+  def mejorar(self):
+    sugerencias = []
+    if media < 3:
+      peores = [i for i, x in enumerate(self.calificaciones) if x < 3]
+      for i in peores:
+        sugerencias.append(f"q repase más la asignatura  {i + 1}.")
+    if self.asistencia < 80:
+      sugerencias.append(f"Asistir a las consultas.")
+    if self.asistencia >= 80 and media >= 3:
+      sugerencias.append(f"participar más en las clases.")
+    return f"{self.nombre} mejorarastu rendimiento al seguir estas sugerencias: {' '.join(sugerencias)}"
+    for estudiante in estudiantes:
+  print(estudiante.evaluar())
+  print(estudiante.mejorar())
+  print()
